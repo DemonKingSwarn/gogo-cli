@@ -8,8 +8,7 @@ GOGO-CLI
 
 <div align="center">
 <br>
-![Language](https://img.shields.io/badge/-python-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)
- <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+  <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
   <img src="https://img.shields.io/badge/os-linux-brightgreen" alt="OS linux">
   <img src="https://img.shields.io/badge/os-mac-brightgreen"alt="OS Mac">
   <img src="https://img.shields.io/badge/os-windows-brightgreen" alt="OS Windows">
