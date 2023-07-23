@@ -6,6 +6,7 @@ import sys
 
 from .utils.__player__ import play as pl
 from .utils.__downloader__ import download as dl
+from .utils.__menu__ import menu
 
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.82"
@@ -24,10 +25,13 @@ color = [
 ]
 
 if len(sys.argv) == 1:
-    query = input("Search: ")
-    if query == "":
-        print("ValueError: no query parameter provided")
-        exit(1)
+    try:
+        query = input("Search: ")
+        if query == "":
+            print("ValueError: no query parameter provided")
+            exit(1)
+    except KeyboardInterrupt:
+        exit(0)
 else:
     query = " ".join(sys.argv[1:])
 
@@ -35,7 +39,21 @@ query = query.replace(' ', '%20')
 
 url = f"https://api.consumet.org/anime/gogoanime/{query}"
 
-def play(anime, episode):
+
+"""
+def play_next(anime, episode):
+    anime_url = f"https://api.consumet.org/anime/gogoanime/info/{anime}"
+    data = client.get(anime_url).text
+    parsed_data = json.loads(data)
+    total_episodes = parsed_data["totalEpisodes"]
+    new_episode = episode + 1
+    if episode > total_episodes:
+        exit(1)
+"""
+
+def play(anime, episode, playNext):
+    if playNext == 1:
+        episode = episode + 1
     play_url = f"https://api.consumet.org/anime/gogoanime/watch/{anime}-episode-{episode}"
     data = client.get(play_url, params = { "server": "gogocdn" },).text
     parsed_data = json.loads(data)
@@ -55,16 +73,8 @@ def play(anime, episode):
     for source in parsed_data["sources"]:
         if source["quality"] == chosen_quality:
             #print(source["url"] + ' ' + referrer)
-            print("\n1. Play\n2. Download\n")
-            e = int(input(": "))
-            if e == 1:
-                pl(source["url"], referrer, anime, episode)
-            elif e == 2:
-                dl(anime, source["url"], referrer, episode)
-            else:
-                print("[!] Invalid option")
-                exit(1)
-
+            menu(source["url"], referrer, anime, episode)
+            
 def get_info(anime):
     info_url = f"https://api.consumet.org/anime/gogoanime/info/{anime}"
     data = client.get(info_url).text
@@ -74,7 +84,8 @@ def get_info(anime):
         ch = int(input(f"Total Episodes: {total_episodes}, Enter episode to play: "))
     else:
         ch = 1
-    uwu = play(anime, ch)
+    playNext = 0
+    uwu = play(anime, ch, playNext)
 
 def search():
     try:
