@@ -28,7 +28,7 @@ GOGO-CLI
 - [Project Disclaimer](#project-disclaimer)
 
 # Installation
-<i>for dependencies <a href="#dependencies">(see below</a>.</i>
+<i>for dependencies <a href="#dependencies">(see below)</a>.</i>
 
 This project can be installed on to your device via different mechanisms, these mechanisms are listed below in the order of ease.
 
