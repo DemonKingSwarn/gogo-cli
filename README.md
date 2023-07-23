@@ -3,7 +3,7 @@ GOGO-CLI
 </h1>
 <br>
 <h3 align="center">
- A high efficient, powerful and fast anime scraper.
+ A high efficient, powerful and fast anime scraper. This tool scrapes the site <a href="https://gogoanimehd.com">gogoanime</a>.
  </h3>
 
 <div align="center">
