@@ -3,6 +3,7 @@ import httpx
 import json
 import subprocess
 import sys
+import random
 
 from .utils.__player__ import play as pl
 from .utils.__downloader__ import download as dl
@@ -40,16 +41,6 @@ query = query.replace(' ', '%20')
 url = f"https://api.consumet.org/anime/gogoanime/{query}"
 
 
-"""
-def play_next(anime, episode):
-    anime_url = f"https://api.consumet.org/anime/gogoanime/info/{anime}"
-    data = client.get(anime_url).text
-    parsed_data = json.loads(data)
-    total_episodes = parsed_data["totalEpisodes"]
-    new_episode = episode + 1
-    if episode > total_episodes:
-        exit(1)
-"""
 
 def play(anime, episode, playNext):
     if playNext == 1:

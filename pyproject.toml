@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "gogo-cli"
-version = "0.0.2"
+version = "0.0.3"
 description = "A high efficient, powerful and fast anime scraper."
 authors = ["DemonKingSwarn <rockingswarn@gmail.com>"]
 license = "GPLv3"
