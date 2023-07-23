@@ -2,11 +2,7 @@
 GOGO-CLI
 </h1>
 <br>
-<h3 align="center">
- A high efficient, powerful and fast anime scraper. This tool scrapes the site <a href="https://gogoanimehd.com">gogoanime</a>.
- </h3>
 
-<div align="center">
 <br>
   <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
   <img src="https://img.shields.io/badge/os-linux-brightgreen" alt="OS linux">
@@ -15,6 +11,13 @@ GOGO-CLI
   <img src="https://img.shields.io/badge/os-android-brightgreen" alt="OS Android">
   <br>
 </div>
+<br>
+
+<h3 align="center">
+ A high efficient, powerful and fast anime scraper. This tool scrapes the site <a href="https://gogoanimehd.com">gogoanime</a>.
+ </h3>
+
+<div align="center">
 
 <img src="https://github.com/DemonKingSwarn/gogo-cli/raw/master/.assets/output.gif">
 
