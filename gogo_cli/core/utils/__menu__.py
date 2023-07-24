@@ -1,3 +1,5 @@
+import platform
+
 from .__player__ import play as pl
 from .__downloader__ import download as dl
 from .__cast__ import open_cast
@@ -6,7 +8,11 @@ import os
 
 def menu(url, referrer, anime, episode):
     while True:
-        os.system('clear')
+        plt = platform.system()
+        if plt == "Windows":
+            os.system("cls")
+        else:
+            os.system('clear')
         print("\n1. Play\n2. Download\n3. Replay episode\n4. Play next episode\n5. Cast to a chromecast device\n6. Quit\n")
         e = int(input(": "))
         if e == 1:
