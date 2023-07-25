@@ -11,11 +11,17 @@ def play(url, referer, anime, episode):
         output_str = output.decode("utf-8").strip()
         if output_str == "Android":
             args = [
-                "am start", 
-                "--user 0",
-                "-a android.intent.action.VIEW",
-                f"-d \"{url}\"",
-                "-n is.xyz.mpv/.MPVActivity",
+                "nohup",
+                "am",
+                "start", 
+                "--user",
+                "0",
+                "-a",
+                "android.intent.action.VIEW",
+                "-d".
+                f"\"{url}\"",
+                "-n",
+                "is.xyz.mpv/.MPVActivity",
             ]
             mpv_android_process = subprocess.Popen(args, stdout=subprocess.DEVNULL)
             mpv_android_process.wait()
