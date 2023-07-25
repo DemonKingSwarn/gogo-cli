@@ -19,7 +19,7 @@ def play(url, referer, anime, episode):
                 "-a",
                 "android.intent.action.VIEW",
                 "-d".
-                f'"{url}"',
+                url,
                 "-n",
                 "is.xyz.mpv/.MPVActivity",
             ]
