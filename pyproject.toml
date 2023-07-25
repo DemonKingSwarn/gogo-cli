@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "gogo-cli"
-version = "0.0.6"
+version = "0.0.7"
 description = "A cli tool to browse and play anime."
 authors = ["DemonKingSwarn <rockingswarn@gmail.com>"]
 license = "GPLv3"

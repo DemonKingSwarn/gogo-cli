@@ -42,9 +42,7 @@ url = f"https://api.consumet.org/anime/gogoanime/{query}"
 
 
 
-def play(anime, episode, playNext):
-    if playNext == 1:
-        episode = episode + 1
+def play(anime, episode):
     play_url = f"https://api.consumet.org/anime/gogoanime/watch/{anime}-episode-{episode}"
     data = client.get(play_url, params = { "server": "gogocdn" },).text
     parsed_data = json.loads(data)
@@ -75,8 +73,7 @@ def get_info(anime):
         ch = int(input(f"Total Episodes: {total_episodes}, Enter episode to play: "))
     else:
         ch = 1
-    playNext = 0
-    uwu = play(anime, ch, playNext)
+    uwu = play(anime, ch)
 
 def search():
     try:
