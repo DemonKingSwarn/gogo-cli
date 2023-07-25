@@ -10,6 +10,7 @@ GOGO-CLI
   <img src="https://img.shields.io/badge/os-mac-brightgreen"alt="OS Mac">
   <img src="https://img.shields.io/badge/os-windows-brightgreen" alt="OS Windows">
   <img src="https://img.shields.io/badge/os-android-brightgreen" alt="OS Android">
+  <img src="https://img.shields.io/badge/os-ios-brightgreen" alt="OS IOS">
   <br>
 </div>
 <br>
@@ -27,6 +28,7 @@ GOGO-CLI
     1. [PIP Installation](#1-pip-installs-packages-aka-pip-installation)
     2. [Source Code Download](#2-source-code-download)
     3. [Android Installation](#3-android-installation)
+    4. [IOS Installation](#4-ios-installation)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
 - [Support](#support)
@@ -71,6 +73,28 @@ For it to be able to stream you need to add referrer in mpv by opening mpv <a hr
 ```sh
 referrer="https://gogoanimehd.to/"
 ```
+
+## 4. IOS Installation
+
+Install iSH and VLC from the app store.
+
+Make sure apk is updated using `apk update; apk upgrade` then run this:
+
+```sh
+[ ! -d ~/.local/bin ] && mkdir ~/.local/bin && echo "export PATH=$HOME/.local/bin:$PATH\nexport GOGO_CLI_PLAYER=\"iSH\"" >> ".$(echo $SHELL | sed -nE "s|.*/(.*)\$|\1|p")rc"
+apk add --update-cache python3 py3-pip
+git clone https://github.com/Lockl00p/ffmpeglibs-iSH.git ~/ffmpeg
+cd ~/ffmpeg
+cat fmp.?? > ffmpeg.tar.gz
+tar -xvf ffmpeg.tar.gz
+cd FFmpeg
+make install
+cd
+rm -rf ffmpeg
+apk add ffmpeg
+pip install gogo-cli
+```
+note that downloading is going to be very slow. This is an iSH issue, not gogo-cli issue.
 
 # Dependencies
 - [`mpv`](https://mpv.io) - Video Player

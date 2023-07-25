@@ -1,5 +1,6 @@
 import platform
 import subprocess
+import os
 
 MPV_EXECUTABLE = "mpv"
 IINA_EXECUTABLE = "iina"
@@ -7,10 +8,14 @@ IINA_EXECUTABLE = "iina"
 def play(url, referer, anime, episode):
     try:
 
+        player = f"{os.getenv('GOGO_CLI_PLAYER')}"
         output = subprocess.check_output(["uname", "-o"])
         output_str = output.decode("utf-8").strip()
         if output_str == "Android":
             subprocess.call(f"nohup am start --user 0 -a android.intent.action.VIEW -d \"{url}\" -n is.xyz.mpv/.MPVActivity", shell=True)
+
+        elif player == "iSH":
+            print("\x1b]8;;vlc-x-callback://x-callback-url/stream?url=%s&filename=%sepisode-%s\x07~~~~~~~~~~~~~~~~~~~~\n~ Tap to open VLC ~\n~~~~~~~~~~~~~~~~~~~~\x1b]8;;\x07" % (url, anime, episode))
 
         elif(platform.system() == "Linux" or platform.system() == "Windows"):
             args = [
