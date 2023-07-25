@@ -65,9 +65,6 @@ Install termux <a href="https://termux.com">(Guide)</a>
 ```sh
 pkg up -y && pkg in python
 pip install gogo-cli
-echo '#!/data/data/com.termux/files/usr/bin/sh' > $PREFIX/bin/mpv
-echo 'am start --user 0 -a android.intent.action.VIEW -d "$1" -n is.xyz.mpv/.MPVActivity &' >> $PREFIX/bin/mpv
-chmod +x $PREFIX/bin/mpv
 ```
 
 For it to be able to stream you need to add referrer in mpv by opening mpv <a href="https://play.google.com/store/apps/details?id=is.xyz.mpv">(playstore version)</a>, going into Settings -> Advanced -> Edit mpv.conf and adding
